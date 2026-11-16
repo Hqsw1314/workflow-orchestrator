@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+}
+
+.app-layout {
+  display: flex;
+  height: 100vh;
+}
+
+.palette {
+  width: 180px;
+  padding: 16px 12px;
+  border-right: 1px solid #e5e7eb;
+  background: #fafafa;
+  flex-shrink: 0;
+}
+
+.palette h3 {
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.palette__item {
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 13px;
+  cursor: grab;
+  user-select: none;
+}
+
+.palette__item:active {
+  cursor: grabbing;
+}
+
+.canvas-wrapper {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.toolbar {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 10;
+  display: flex;
+  gap: 8px;
+}
+
+.toolbar button {
+  padding: 7px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.toolbar button:hover {
+  background: #f3f4f6;
+}
+
+.task-node {
+  width: 180px;
+  padding: 10px 12px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 8%);
+  font-size: 13px;
+}
+
+.task-node--selected {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgb(37 99 235 / 15%);
+}
+
+.task-node__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.task-node__type {
+  font-size: 10px;
+  font-weight: 700;
+  color: #6b7280;
+  letter-spacing: 0.04em;
+}
+
+.task-node__status {
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+.task-node__status--running {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.task-node__status--done {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.task-node__status--failed {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.task-node__label {
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.4;
+}
+
+.task-node__assignee {
+  margin-top: 6px;
+  font-size: 11px;
+  color: #6b7280;
+}
